@@ -30,7 +30,7 @@ body {
 }
 
 #navbar-holder #profiles ul li:last-child {
- margin-bottom: 80px;
+ margin-bottom: 50px;
 }
 
 
@@ -47,19 +47,32 @@ body {
 .main-class{
   margin-left:25%;
   padding:1px 16px;
-  height:1000px;
+  height:600px;
 }
 
-#navbar-holder #social .icons {
+#navbar-holder .icons {
   margin-top: 25px;
+  margin-bottom: 40px;
   display: flex;
 }
 
-#navbar-holder #social .icons:hover {
+#navbar-holder .icons:hover {
   cursor:pointer;
 }
 
-#navbar-holder #social .icon {
+#navbar-holder .icon {
   flex: 40%;
   padding: 5px;
+}
+
+#counter{
+  position: absolute;
+  top: 600px;
+  right: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.dp img{
+  float: right;
 }
