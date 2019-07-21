@@ -76,3 +76,28 @@ body {
 .dp img{
   float: right;
 }
+
+.main-class{
+  font-family: "Times New Roman";
+}
+
+.main-class .info{
+  position: absolute;
+  top: 85px;
+  left: 321px;
+  right: 702px;
+  text-align: justify;
+}
+
+h2{
+  position: absolute;
+  left: 508px;
+  top: 5px;
+}
+
+hr{
+  position:absolute;
+  left: 321px;
+  right: 702px;
+  top: 55px;
+}
