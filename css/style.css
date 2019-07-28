@@ -85,19 +85,23 @@ body {
   position: absolute;
   top: 85px;
   left: 321px;
-  right: 702px;
+  right: 479px;
   text-align: justify;
+}
+
+body a, a:link, a:visited, a:focus, a:hover, a:active{
+  color: #808B96;
 }
 
 h2{
   position: absolute;
-  left: 508px;
+  left: 632px;
   top: 5px;
 }
 
 hr{
   position:absolute;
   left: 321px;
-  right: 702px;
+  right: 479px;
   top: 55px;
 }
