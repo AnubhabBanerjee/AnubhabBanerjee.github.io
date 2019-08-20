@@ -82,11 +82,20 @@ body {
 }
 
 .main-class .info{
-  position: absolute;
-  top: 85px;
-  left: 321px;
-  right: 479px;
+  position: relative;
+  top: 25px;
+  left: -50px;
   text-align: justify;
+}
+
+.main-class .office{
+  position: relative;
+  top: 25px;
+  font-size: 20px;
+}
+
+.journal-item{
+  font-size: 18px;
 }
 
 body a, a:link, a:visited, a:focus, a:hover, a:active{
@@ -94,14 +103,15 @@ body a, a:link, a:visited, a:focus, a:hover, a:active{
 }
 
 h2{
-  position: absolute;
-  left: 632px;
-  top: 5px;
+  position: relative;
+  /*left: 288px;*/
+  text-align: center;
+  top: 31px;
+  margin-bottom: 74px;
 }
 
 hr{
-  position:absolute;
-  left: 321px;
-  right: 479px;
-  top: 55px;
+  position:relative;
+  left: -50px;
+  margin-bottom: 30px;
 }
