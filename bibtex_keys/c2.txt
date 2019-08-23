@@ -1,0 +1,6 @@
+@inproceedings{banerjee2019sharing,
+  title={Sharing Content at the Edge of the Network Using Game Theoretic Centrality},
+  author={Banerjee, Anubhab and Sastry, Nishanth and Mas Machuca, Carmen},
+  booktitle={International Conference on Transparent Optical Networks ICTON},
+  year={2019}
+}

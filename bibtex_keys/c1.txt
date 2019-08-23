@@ -1,0 +1,8 @@
+@inproceedings{banerjee2015new,
+  title={A new set of spreading codes for synchronous CDMA system},
+  author={Banerjee, Anubhab and Saif, Kazi Md and Chattopadhyay, Sudipta},
+  booktitle={2015 International Conference on Computational Intelligence and Communication Networks (CICN)},
+  pages={490--495},
+  year={2015},
+  organization={IEEE}
+}

@@ -56,6 +56,10 @@ body {
   display: flex;
 }
 
+.social, .research{
+  margin-top: 80px;
+}
+
 #navbar-holder .icons:hover {
   cursor:pointer;
 }
@@ -75,6 +79,7 @@ body {
 
 .dp img{
   float: right;
+  bottom: 0px;
 }
 
 .main-class{
@@ -83,7 +88,7 @@ body {
 
 .main-class .info{
   position: relative;
-  top: 25px;
+  bottom: 0px;
   left: -50px;
   text-align: justify;
 }
@@ -94,8 +99,10 @@ body {
   font-size: 20px;
 }
 
-.journal-item{
+.journal-item, .conference-item{
   font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 body a, a:link, a:visited, a:focus, a:hover, a:active{
@@ -114,4 +121,23 @@ hr{
   position:relative;
   left: -50px;
   margin-bottom: 30px;
+}
+
+.refs{
+  display: flex;
+}
+
+.bibtex, .textlink{
+  background-color: lightgrey;
+  width: 50px;
+  height: 22px;
+  line-height: 22px;
+  border: 2px;
+  padding: 2px;
+  margin: 2px;
+  margin-top: 8px;
+  margin-right: 7px;
+  text-align: center;
+  position: relative;
+  left: 22px;
 }

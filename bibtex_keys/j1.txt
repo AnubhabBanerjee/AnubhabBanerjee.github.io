@@ -1,0 +1,7 @@
+@article{banerjee2019game,
+  title={Game theory based content placement and pricing in connected edge networks},
+  author={Banerjee, Anubhab},
+  journal={Signature},
+  volume={14},
+  year={2019}
+}

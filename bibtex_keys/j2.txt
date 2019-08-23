@@ -1,0 +1,9 @@
+@article{banerjee2018content,
+  title={Content search and routing under custodian unavailability in information-centric networks},
+  author={Banerjee, Anubhab and Banerjee, Bitan and Seetharam, Anand and Tellambura, Chintha},
+  journal={Computer Networks},
+  volume={141},
+  pages={92--101},
+  year={2018},
+  publisher={Elsevier}
+}
