@@ -115,6 +115,8 @@ body {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
+  position: relative;
+  left: -50px;
 }
 
 body a, a:link, a:visited, a:focus, a:hover, a:active{
@@ -142,6 +144,7 @@ hr{
   margin-bottom: 5px;
   margin-top: 5px;
   text-align: justify;
+  font-size: 18px;
 }
 
 .refs{
