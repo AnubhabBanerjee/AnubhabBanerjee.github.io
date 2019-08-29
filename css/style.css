@@ -23,14 +23,22 @@ body {
 #navbar-holder #profiles ul li a {
   display: block;
   color: #000;
-  padding: 8px 16px;
+  padding: 4px 6px;
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#navbar-holder #dp{
   margin-top: 20px;
 }
 
+#navbar-holder #dp .icon img{
+  border-radius: 60%;
+}
+
 #navbar-holder #profiles ul li:last-child {
- margin-bottom: 50px;
+ margin-bottom: 20px;
 }
 
 
@@ -51,14 +59,14 @@ body {
 }
 
 #navbar-holder .icons {
-  margin-top: 25px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
 }
 
-.social, .research{
-  margin-top: 80px;
-}
+/*#navbar-holder #social, #navbar-holder #research, #navbar-holder #dp, #navbar-holder #profile{
+  height: 25%;
+}*/ 
 
 #navbar-holder .icons:hover {
   cursor:pointer;
@@ -77,10 +85,9 @@ body {
   text-align: center;
 }
 
-.dp img{
+/*.dp img{
   float: right;
-  bottom: 0px;
-}
+}*/
 
 .main-class{
   font-family: "Times New Roman";
@@ -91,6 +98,11 @@ body {
   bottom: 0px;
   left: -50px;
   text-align: justify;
+}
+
+.main-class .cover-photo{
+  position: relative;
+  left: -50px;
 }
 
 .main-class .office{
@@ -113,14 +125,15 @@ h2{
   position: relative;
   /*left: 288px;*/
   text-align: center;
-  top: 31px;
-  margin-bottom: 74px;
+  top: 30px;
+  margin-bottom: 50px;
 }
 
 hr{
   position:relative;
   left: -50px;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .refs{
