@@ -1,0 +1,6 @@
+@article{banerjee2019game,
+  title={Game theoretic pricing policy in online media delivery platforms},
+  author={Banerjee, Anubhab and Machuca, Carmen Mas},
+  journal={arXiv preprint arXiv:1912.06434},
+  year={2019}
+}
