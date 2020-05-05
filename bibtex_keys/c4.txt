@@ -1,0 +1,6 @@
+@article{banerjee2020necessity,
+  title={On the Necessity and Design of Coordination Mechanism for Cognitive Autonomous Networks},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  journal={arXiv preprint arXiv:2001.07031},
+  year={2020}
+}
