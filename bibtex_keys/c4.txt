@@ -1,6 +1,8 @@
-@article{banerjee2020necessity,
-  title={On the Necessity and Design of Coordination Mechanism for Cognitive Autonomous Networks},
+@inproceedings{banerjee2020game,
+  title={Game theoretic conflict resolution mechanism for cognitive autonomous networks},
   author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
-  journal={arXiv preprint arXiv:2001.07031},
-  year={2020}
+  booktitle={2020 International Symposium on Performance Evaluation of Computer and Telecommunication Systems (SPECTS)},
+  pages={1--8},
+  year={2020},
+  organization={IEEE}
 }

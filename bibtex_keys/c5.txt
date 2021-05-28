@@ -1,0 +1,10 @@
+@inproceedings{banerjee2021optimal,
+	title={Optimal configuration determination in Cognitive Autonomous Networks},    
+	author={Banerjee, A. and Mwanje, S. S. and Carle, G.},  
+	booktitle={2021 IFIP/IEEE Symposium on Integrated Network and Service Management (IM)},   
+	year={2021},  
+	volume={},  
+	number={},  
+	pages={},
+	organization={IEEE}
+}
