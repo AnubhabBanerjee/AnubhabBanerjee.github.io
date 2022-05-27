@@ -1,0 +1,8 @@
+@inproceedings{banerjee2021intent,
+  title={An intent-driven orchestration of cognitive autonomous networks for ran management},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  booktitle={2021 17th International Conference on Network and Service Management (CNSM)},
+  pages={380--384},
+  year={2021},
+  organization={IEEE}
+}

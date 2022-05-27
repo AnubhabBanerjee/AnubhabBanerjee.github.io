@@ -1,0 +1,8 @@
+@inproceedings{banerjee2021detection,
+  title={On detection of manipulative cognitive functions in cognitive autonomous networks},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  booktitle={2021 17th International Conference on Network and Service Management (CNSM)},
+  pages={194--200},
+  year={2021},
+  organization={IEEE}
+}

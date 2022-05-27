@@ -1,0 +1,10 @@
+@article{banerjee2021implementation,
+  title={On the implementation of cognitive autonomous networks},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  journal={Internet Technology Letters},
+  volume={4},
+  number={6},
+  pages={e317},
+  year={2021},
+  publisher={Wiley Online Library}
+}
