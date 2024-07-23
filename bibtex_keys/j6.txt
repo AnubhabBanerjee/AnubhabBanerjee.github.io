@@ -1,0 +1,10 @@
+@ARTICLE{ituAnubhab,
+  title={Intent-driven network and service management: Definitions, modeling and implementation},
+  author={Mwanje, Stephen S and Banerjee, Anubhab and et al.},
+  journal={ITU Journal on Future and Evolving Technologies (ITU-JFET)},
+  volume={3},
+  number={3},
+  pages={555--569},
+  year={2022},
+  publisher={ITU}
+}

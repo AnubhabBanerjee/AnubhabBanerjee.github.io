@@ -1,0 +1,10 @@
+@article{banerjee2022trust,
+  title={Trust and performance in future ai-enabled, open, multi-vendor network management automation},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  journal={IEEE Transactions on Network and Service Management},
+  volume={20},
+  number={2},
+  pages={995--1007},
+  year={2022},
+  publisher={IEEE}
+}

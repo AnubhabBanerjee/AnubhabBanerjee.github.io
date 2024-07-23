@@ -1,0 +1,8 @@
+@inproceedings{banerjee2023coordination,
+  title={Coordination, Trust and Orchestration of Cognitive, Open, Multi-Vendor Network Automation Functions},
+  author={Banerjee, Anubhab and Carle, Georg},
+  booktitle={2023 IEEE Conference on Standards for Communications and Networking (CSCN)},
+  pages={388--388},
+  year={2023},
+  organization={IEEE}
+}

@@ -1,0 +1,8 @@
+@inproceedings{banerjee2022contradiction,
+  title={Contradiction management in intent-driven cognitive autonomous ran},
+  author={Banerjee, Anubhab and Mwanje, Stephen S and Carle, Georg},
+  booktitle={2022 IFIP Networking Conference (IFIP Networking)},
+  pages={1--6},
+  year={2022},
+  organization={IEEE}
+}
