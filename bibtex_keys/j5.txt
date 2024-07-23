@@ -1,0 +1,6 @@
+@article{banerjee2024co,
+  title={Coordination, Trust and Orchestration of Cognitive, Open, Multi-vendor Network Automation Functions},
+  author={Banerjee, Anubhab},
+  year={2024},
+  howpublished={(Doctoral Dissertation, Technical University of Munich)}
+}
