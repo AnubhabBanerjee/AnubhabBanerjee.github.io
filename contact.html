@@ -25,7 +25,7 @@
     <hr>
     Do you have anything specific in your mind that you want to ask me? Please fill out the following information.
     <br><br>
-    <form action="mailto:anubhab.banerjee@tum.de" id="userQuery" method="GET">
+    <form action="mailto:anubhab.banerjee@tum.de" id="userQuery" enctype="text/plain" method="POST">
       <div>
         <input type="text" placeholder="First name" name="firstName" required />
       </div>
@@ -43,7 +43,7 @@
       </div>
       <br>
       <div>
-        <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit'>
+        <button type="submit" value="send">
           Send
         </button>
       </div>
@@ -52,7 +52,6 @@
 
   <script src="js\jquery.js"></script>
   <script src="js\script.js"></script>
-  <script src="js\captcha.js"></script>
 </body>
 
 </html>
