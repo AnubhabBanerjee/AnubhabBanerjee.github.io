@@ -1,26 +1,58 @@
 </<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <link rel="stylesheet" type="text/css" href="css\style.css">
-    <title>Contact</title>
-  </head>
-  <body>
 
-    <div id="navbar-holder"></div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <link rel="stylesheet" type="text/css" href="css\style.css">
+  <title>Contact</title>
+</head>
 
-    <div class="main-class">
-		<h2>My contact information</h2>
-		<hr>
-		You can always reach out to me via social media. However, if you do not have any social media account, here are my email IDs:
-		<br><br>
-		<a href="mailto:anubhab.1.banerjee@nokia.com"> Corporate Email ID </a> 
-		<br><br>
-		<a href="mailto:anubhab.banerjee@tum.de"> University Email ID</a> 
-    </div>
+<body>
 
-    <script src="js\jquery.js"></script>
-    <script src="js\script.js"></script>
-  </body>
+  <div id="navbar-holder"></div>
+
+  <div class="main-class">
+    <h2>My contact information</h2>
+    <hr>
+    You can always reach out to me via social media. However, if you do not have any social media account, here are my
+    email IDs:
+    <br><br>
+    <a href="mailto:anubhab.1.banerjee@nokia.com"> Corporate Email ID </a>
+    <br><br>
+    <a href="mailto:anubhab.banerjee@tum.de"> University Email ID</a>
+    <h2>Ask me Anything!</h2>
+    <hr>
+    Do you have anything specific in your mind that you want to ask me? Please fill out the following information.
+    <br><br>
+    <form action="mailto:anubhab.banerjee@tum.de" id="userQuery" method="GET">
+      <div>
+        <input type="text" placeholder="First name" name="firstName" required />
+      </div>
+      <br>
+      <div>
+        <input type="text" placeholder="Last name" name="lastName" required />
+      </div>
+      <br>
+      <div>
+        <input type="text" placeholder="Email ID" name="emailid" required />
+      </div>  
+      <br>
+      <div>
+        <textarea placeholder="Your message (min 50 characters)" name="message" required></textarea>
+      </div>
+      <br>
+      <div>
+        <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit'>
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="js\jquery.js"></script>
+  <script src="js\script.js"></script>
+  <script src="js\captcha.js"></script>
+</body>
+
 </html>
