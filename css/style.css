@@ -111,7 +111,15 @@ body {
   font-size: 20px;
 }
 
-.journal-item, .conference-item, .thesis-item, .workshop-item, .poster-item{
+.journal-item, .conference-item{
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: -50px;
+}
+
+.thesis-item, .workshop-item, .poster-item{
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
