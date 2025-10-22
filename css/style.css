@@ -111,7 +111,7 @@ body {
   font-size: 20px;
 }
 
-.journal-item, .conference-item{
+.journal-item, .conference-item, .ipr-item{
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -159,7 +159,7 @@ hr{
   display: flex;
 }
 
-.bibtex, .textlink{
+.bibtex, .textlink, .iprlink{
   background-color: lightgrey;
   width: 50px;
   height: 22px;
@@ -172,4 +172,9 @@ hr{
   text-align: center;
   position: relative;
   left: 22px;
+}
+
+.appnumber, .appdate{
+  font-size: 16px;
+  white-space: pre-line;
 }
