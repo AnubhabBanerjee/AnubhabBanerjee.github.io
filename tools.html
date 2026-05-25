@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Research tools and simulators by Dr.-Ing. Anubhab Banerjee — Shapley value calculator, wireless link capacity simulator, and greedy graph partitioner.">
-  <meta name="keywords" content="Anubhab Banerjee, tools, Shapley value, wireless link capacity, graph partitioning, research tools, simulator">
+  <meta name="description" content="Research tools and simulators by Dr.-Ing. Anubhab Banerjee — Sionna AI-RAN twin, Kernel Critic, WarpGroup backend for LLM inference, Kube Timeslice Profiler, Shapley calculator, wireless link capacity, and greedy graph partitioner.">
+  <meta name="keywords" content="Anubhab Banerjee, tools, Shapley value, wireless link capacity, graph partitioning, research tools, simulator, LLM inference, Kubernetes, GPU">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Tools | Dr.-Ing. Anubhab Banerjee</title>
 </head>
@@ -37,6 +37,26 @@
       back into the generation loop for automated self-healing.
       <br><br>
       Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/kernel-critic" target="_blank">Link to
+        repository</a>.
+    </div>
+    <h2>WarpGroup Backend</h2>
+    <hr>
+    <div id="description">
+      A high-performance C++ backend for extreme-context LLM inference. It replaces item-count batching with dynamic,
+      VRAM-aware First-Fit Decreasing (FFD) bin packing. PyBind11 drives async queueing with 16-token alignment, and
+      <code>cudaHostAlloc</code> pinned paths feed zero-copy transfers into FlashAttention-2 — aimed at fewer OOMs and higher sustained GPU throughput.
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/WarpGroup-backend" target="_blank">Link to
+        repository</a>.
+    </div>
+    <h2>Kube Timeslice Profiler</h2>
+    <hr>
+    <div id="description">
+      Single-node K3s systems study: measure latency (p50, p95, p99), jitter, and a throughput proxy when a vDU-style FFT workload and a GEMM
+      inference workload share one NVIDIA GPU via the Kubernetes device plugin with CUDA time-slicing. Includes reproducible PyTorch workers, Job manifests,
+      a build/run orchestrator, and a CSV-to-plots pipeline aimed at edge AI-RAN colocation experiments.
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/Kube-Timeslice-Profiler" target="_blank">Link to
         repository</a>.
     </div>
     <h2>Shapley value calculator </h2>
