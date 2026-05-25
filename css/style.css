@@ -58,6 +58,10 @@ body {
   height:600px;
 }
 
+body.page-blogs .main-class {
+  height: auto;
+}
+
 #navbar-holder .icons {
   margin-top: 20px;
   margin-bottom: 20px;
