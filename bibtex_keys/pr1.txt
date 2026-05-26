@@ -1,0 +1,7 @@
+@misc{banerjee2026perplexitytrap,
+  author       = {Banerjee, Anubhab},
+  title        = {The Perplexity Trap: When Patent Law Makes Human Writing Look Like AI},
+  year         = {2026},
+  note         = {Preprint},
+  howpublished = {https://anubhabbanerjee.github.io/preprints/main_paper.pdf},
+}
