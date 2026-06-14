@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blogs by Dr.-Ing. Anubhab Banerjee — Towards Data Science articles on ML systems and inference, plus the Medium series 'Patenting in the era of GenAI' (invention reports and AI-assisted innovation).">
-    <meta name="keywords" content="Anubhab Banerjee, blog, Towards Data Science, patenting, GenAI, invention reports, machine learning, LLM inference, GPU, AI detection, Medium">
+    <meta name="description" content="Blogs by Dr.-Ing. Anubhab Banerjee — Fun with GPU and production-grade agentic inference on Towards Data Science, plus the Medium series Patenting in the era of GenAI.">
+    <meta name="keywords" content="Anubhab Banerjee, blog, Towards Data Science, GPU, LLM inference, agentic AI, Kubernetes, patenting, GenAI, invention reports, Medium">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Blogs | Dr.-Ing. Anubhab Banerjee</title>
   </head>
-  <body>
+  <body class="page-blogs">
 
     <div id="navbar-holder"></div>
 
     <div class="main-class">
-      <h2 id="towards-data-science">Towards Data Science</h2>
+      <div id="description">
+        I am an official <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> contributor, writing on ML systems, efficient inference, and related engineering topics.
+        The first two sections collect selected <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> posts by theme; the last section links the <b>Medium</b> patenting arc.
+      </div>
+      <hr>
+      <h2 id="fun-with-gpu">Fun with GPU</h2>
       <hr>
       <div id="description">
-        I am an official <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> contributor, (and get somewhat paid for) writing on ML systems, efficient inference, and 6G related engineering topics.
-        Articles I publish through the publication are listed below, with more to come.
+        Short, engineer-first notes on GPUs and LLM inference—where batching, memory layout, and host/device transfers decide whether the hardware is doing real work.
       </div>
       <hr>
       <div class="blog-item" id="ml-systems-engineering">
@@ -25,10 +29,38 @@
         <br>
       </div>
       <div id="description">
-        A tour of WarpGroup-Backend: VRAM-aware bin packing, pinned-memory transfers, and how to cut wasted GPU work when batching variable-length LLM sequences — with code and a few sharp words for default padding. . . . . <i>Read on Towards Data Science <a href="https://towardsdatascience.com/i-built-a-c-backend-so-my-gpu-would-stop-eating-air/" target="_blank">here</a></i>
+        A tour of WarpGroup-Backend: VRAM-aware bin packing, pinned-memory transfers, and how to cut wasted GPU work when batching variable-length LLM sequences — with code and a few sharp words for default padding.
+        The article treats batching policy as a first-class design choice: padding-to-max length burns cycles on meaningless compute, while dynamic packing under a VRAM budget forces an explicit trade-off between occupancy and tail risk.
+        It traces a path from PyBind11-driven queues through aligned chunking into a FlashAttention-friendly memory contract, using <code>cudaHostAlloc</code> pinned pathways so the GPU sees steady work instead of idle gaps waiting on the host. . . . . <i>Read the full post <a href="https://towardsdatascience.com/i-built-a-c-backend-so-my-gpu-would-stop-eating-air/" target="_blank">here</a></i>
       </div>
       <hr>
-      <h2 id="patenting-genai-series">Patenting in the era of GenAI series</h2>
+      <h2 id="production-grade-agentic-inference">Production-grade Agentic Inference</h2>
+      <hr>
+      <div id="description">
+        A line of work on agentic LLM execution under real constraints: shared-prefix prefill, GPU sharing in orchestrated environments, and reproducible latency/throughput measurement.
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>Prefill Once, Fan Out: KV Snapshot Sharing for Multi-Agent LLM Pipelines</h3>
+        <br>
+      </div>
+      <div id="description">
+        A systems-engineering approach to KV cache reuse that proves computing a shared prompt once beats N parallel prefills every time.
+        It frames multi-agent and DAG-shaped LLM workloads where each branch would otherwise re-read the same long document into KV at full cost, and explains how copy-on-fork style host snapshots with RoPE-aware continuation can move time-to-first-token off the critical path.
+        The emphasis is on end-to-end measurables—wall clock, prefix reuse, and branch start latency—grounded in a pinned llama.cpp orchestration surface rather than speculative engine features that are not available to call. . . . . <i>Read the full post <a href="https://towardsdatascience.com/kv-cache-reuse-for-multi-agent-llm-inference-i-built-a-c-orchestrator-so-my-gpu-would-stop-reading-the-same-document-twice/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>GPU Time-Slicing for Concurrent LLM Agents on Kubernetes</h3>
+        <br>
+      </div>
+      <div id="description">
+        Stop trusting the pod status. An end-to-end framework for measuring the hidden microarchitectural costs and memory contention of GPU sharing among AI Agents in Kubernetes.
+        It pairs a single-node K3s lab setup with synchronized inference-style GEMM work alongside a second GPU-heavy tenant, then reads latency through percentiles and jitter instead of a superficial “job completed” signal.
+        The aim is a receipt-grade account of time-sliced GPUs: when co-scheduled agents collide on memory bandwidth and queueing, what happens to tail latency under load, and which measurement choices expose contention that averages hide. . . . . <i>Read the full post <a href="https://towardsdatascience.com/gpu-time-slicing-for-concurrent-llm-agents-on-kubernetes/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <h2 id="patenting-genai-series">Patenting in the era of GenAI</h2>
       <hr>
       <div id="description">
         This five-part <b>Patenting in the era of GenAI</b> series is published on <b>Medium</b> under my personal profile (not in the Towards Data Science publication).
@@ -44,7 +76,7 @@
           To the mankind, an invention has always felt like a spark — that thrilling moment when the curiosity meets thecreativity and 
           something entirely new takes shape. From the steam engine to the smartphone, every great idea begins the same way: a person 
           scribbling thoughts into a notebook (or these days, maybe in an iPad), drafting a disclosure, 
-          or sketching a prototype that might just change everything. . . . . <i>Read the full blog <a href="https://medium.com/@anbdwnroop.banerjee/has-ai-entered-the-inventors-notebook-4766738e685c" target="_blank">here</a></i>
+          or sketching a prototype that might just change everything. . . . . <i>Read the full post <a href="https://medium.com/@anbdwnroop.banerjee/has-ai-entered-the-inventors-notebook-4766738e685c" target="_blank">here</a></i>
       </div>
       <hr>
       <div class="blog-item">
@@ -55,7 +87,8 @@
           Invention reports are more than just some mere paperworks, they’re the first real bridge 
           between a spark of insight and intellectual property protection. In a university lab, a 
           corporate R&D group, or a scrappy startup — the invention report is often the document 
-          that shapes whether an idea becomes a patent, a trade secret, or a . . . . . <i>Read the full blog <a href="https://medium.com/@anbdwnroop.banerjee/what-makes-an-invention-report-human-7d08ddcb37be" target="_blank">here</a></i>
+          that shapes whether an idea becomes a patent, a trade secret, or a . . . . .
+          The discussion then turns to what makes technical voice feel authentic—continuity of detail, credible provenance for experiments, and consistency with the constraints inventors actually operate under. . . . . <i>Read the full post <a href="https://medium.com/@anbdwnroop.banerjee/what-makes-an-invention-report-human-7d08ddcb37be" target="_blank">here</a></i>
       </div>
       <hr>
       <div class="blog-item">
@@ -66,7 +99,8 @@
           AI detection tools promise to separate human writing from machine output — but how reliable are they really?
           In this part, we put the most popular detectors to the test against real-world invention reports
           and examine whether technology alone can solve the problem of AI-assisted
-          authorship. . . . . <i>Read the full blog <a href="https://medium.com/@anbdwnroop.banerjee/can-tools-really-catch-ai-written-reports-f81f10f1b030" target="_blank">here</a></i>
+          authorship.
+          It contrasts headline leaderboard scores with the messier realities of disclosure language, mixed authorship, and partial citations inside real invention packages. . . . . <i>Read the full post <a href="https://medium.com/@anbdwnroop.banerjee/can-tools-really-catch-ai-written-reports-f81f10f1b030" target="_blank">here</a></i>
       </div>
       <hr>
       <div class="blog-item">
@@ -77,7 +111,8 @@
           When automated detectors fall short, human judgment becomes the last line of defense.
           This part explores practical techniques and red flags that reviewers can use to manually identify
           AI-generated content in technical and innovation
-          reports. . . . . <i>Read the full blog <a href="https://medium.com/@anbdwnroop.banerjee/how-to-manually-spot-ai-written-contents-when-the-detectors-fail-6a95c233d21f" target="_blank">here</a></i>
+          reports.
+          It stresses repeatable heuristics—how claims evolve across revisions, where citations drift from the figures they cite, and how to pressure-test suspicious passages with targeted questions instead of generic unease. . . . . <i>Read the full post <a href="https://medium.com/@anbdwnroop.banerjee/how-to-manually-spot-ai-written-contents-when-the-detectors-fail-6a95c233d21f" target="_blank">here</a></i>
       </div>
       <hr>
       <div class="blog-item">
@@ -88,7 +123,8 @@
           Bringing together all the tools, techniques, and insights from the series, this final part walks through
           a hands-on investigation of a real report suspected to be AI-generated — applying both automated detection
           and manual analysis to reach a
-          verdict. . . . . <i>Read the full blog <a href="https://medium.com/@anbdwnroop.banerjee/investigation-of-a-possible-ai-written-report-3c426e1fb263" target="_blank">here</a></i>
+          verdict.
+          It ends with a candid discussion of evidentiary standards: what counts as enough signal to escalate, how to avoid reputational harm from false positives, and how to leave an audit trail that downstream stakeholders can trust. . . . . <i>Read the full post <a href="https://medium.com/@anbdwnroop.banerjee/investigation-of-a-possible-ai-written-report-3c426e1fb263" target="_blank">here</a></i>
       </div>
       <hr>
     </div>
@@ -97,3 +133,4 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+

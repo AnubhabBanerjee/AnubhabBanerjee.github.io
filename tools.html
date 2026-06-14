@@ -19,26 +19,6 @@
       <b>All the tools and simulators listed in this page have been developed for personal experiments or research activities.
         Appropriate licenses apply. If you have any question regarding any of the tools, feel free to contact me.</b>
     </div>
-    <h2>Sionna Munich AI-RAN</h2>
-    <hr>
-    <div id="description">
-      Sionna RT digital twin for AI-RAN: place gNodeBs in a Munich scene, solve planar radio maps on GPU, export SINR/throughput/outage KPIs, 
-      run optional finite-difference + Adam azimuth optimization, and ship a Word baseline-vs-optimized comparison..
-      <br><br>
-      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/sionna-munich-ai-ran" target="_blank">Link to
-        repository</a>.
-    </div>
-    <h2>Kernel Critic</h2>
-    <hr>
-    <div id="description">
-      An AI-driven orchestration framework designed to automate the generation and validation of high-performance CUDA kernels. 
-      Rather than relying on single-shot LLM prompts, KernelCritic implements a Reflective Agent architecture. It uses a "Critic" node 
-      to execute real-time <code>nvcc</code> compilations, feeding hardware constraint failures (e.g., memory coalescing, register pressure) 
-      back into the generation loop for automated self-healing.
-      <br><br>
-      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/kernel-critic" target="_blank">Link to
-        repository</a>.
-    </div>
     <h2>WarpGroup Backend</h2>
     <hr>
     <div id="description">
@@ -68,6 +48,36 @@
       a build/run orchestrator, and a CSV-to-plots pipeline aimed at edge AI-RAN colocation experiments.
       <br><br>
       Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/Kube-Timeslice-Profiler" target="_blank">Link to
+        repository</a>.
+    </div>
+    <h2>CUDA Top-K Retrieval</h2>
+    <hr>
+    <div id="description">
+      A CUDA + C++20 testbed for fused similarity and Top-K vector search that keeps a RAG-style retrieval hop on the GPU, avoiding the
+      per-query Python/CPU round-trip that fragments device-side pipelining in agentic loops. CMake builds CUDA kernels, a small C++ orchestrator,
+      and a CPU reference oracle for parity; benchmarks contrast resident on-device search against a host-round-trip baseline.
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/CUDA-TopK-Retrieval" target="_blank">Link to
+        repository</a>.
+    </div>
+    <h2>Sionna Munich AI-RAN</h2>
+    <hr>
+    <div id="description">
+      Sionna RT digital twin for AI-RAN: place gNodeBs in a Munich scene, solve planar radio maps on GPU, export SINR/throughput/outage KPIs, 
+      run optional finite-difference + Adam azimuth optimization, and ship a Word baseline-vs-optimized comparison..
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/sionna-munich-ai-ran" target="_blank">Link to
+        repository</a>.
+    </div>
+    <h2>Kernel Critic</h2>
+    <hr>
+    <div id="description">
+      An AI-driven orchestration framework designed to automate the generation and validation of high-performance CUDA kernels. 
+      Rather than relying on single-shot LLM prompts, KernelCritic implements a Reflective Agent architecture. It uses a "Critic" node 
+      to execute real-time <code>nvcc</code> compilations, feeding hardware constraint failures (e.g., memory coalescing, register pressure) 
+      back into the generation loop for automated self-healing.
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/kernel-critic" target="_blank">Link to
         repository</a>.
     </div>
     <h2>Shapley value calculator </h2>

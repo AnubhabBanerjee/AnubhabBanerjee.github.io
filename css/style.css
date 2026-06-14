@@ -317,3 +317,19 @@ hr{
   margin: 3px 3px;
   white-space: nowrap;
 }
+
+/* Blogs page: series section titles (h2) vs individual post titles (h3 inside .blog-item) */
+.page-blogs .main-class > h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.page-blogs .blog-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.35;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #222;
+}
