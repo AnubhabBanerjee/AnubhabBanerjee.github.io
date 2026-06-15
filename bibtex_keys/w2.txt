@@ -1,0 +1,7 @@
+@misc{banerjee2026ilcp,
+  title        = {Inductive Latent Context Persistence: Closing the Post-Handover Cold Start in 6G Radio Access Networks},
+  author       = {Banerjee, Anubhab and Awan, Daniyal Amir},
+  year         = {2026},
+  howpublished = {arXiv:2605.00593. Accepted at the AI4NextG Workshop, co-located with ICML 2026},
+  url          = {https://arxiv.org/pdf/2605.00593},
+}
