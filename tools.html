@@ -19,6 +19,17 @@
       <b>All the tools and simulators listed in this page have been developed for personal experiments or research activities.
         Appropriate licenses apply. If you have any question regarding any of the tools, feel free to contact me.</b>
     </div>
+    <h2>VRAM Conductor</h2>
+    <hr>
+    <div id="description">
+      Aa C++17 + CUDA orchestrator that lets multiple AI agents share one constrained GPU. A small daemon (`lmxd`) does NVML-seeded admission control 
+      to prevent <code>llama.cpp</code> OOM crashes; a layer-streaming engine (<code>PinnedHostPool</code> + <code>LayerStreamer</code>) demonstrates 22–32 % wall-clock savings via double-buffered 
+      <code>cudaMemcpyAsync</code> overlap on two CUDA streams, measured on a real PCIe Gen 3 ×16 bus. Ships with a stateless KV-swap helper over `llama.cpp`'s state-serialization API 
+      for model-switch eviction. Pure C++17, CMake, llama.cpp pinned to a stable tag.
+      <br><br>
+      Here is the link to the repository: <a href="https://github.com/AnubhabBanerjee/VRAM-Conductor" target="_blank">Link to
+        repository</a>.
+    </div>
     <h2>WarpGroup Backend</h2>
     <hr>
     <div id="description">
