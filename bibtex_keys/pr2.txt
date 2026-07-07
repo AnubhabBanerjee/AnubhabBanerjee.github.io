@@ -1,0 +1,8 @@
+@misc{banerjee2026wordspredictworkload,
+  author       = {Banerjee, Anubhab},
+  title        = {When Words Predict Workload},
+  year         = {2026},
+  note         = {Preprint},
+  howpublished = {arXiv:2607.04951},
+  url          = {https://arxiv.org/pdf/2607.04951},
+}
