@@ -3,5 +3,6 @@
   title        = {The Perplexity Trap: When Patent Law Makes Human Writing Look Like AI},
   year         = {2026},
   note         = {Accepted at the AI4Law Workshop, co-located with ICML 2026},
-  howpublished = {https://anubhabbanerjee.github.io/preprints/main_paper.pdf},
+  howpublished = {arXiv:2607.13044},
+  url          = {https://arxiv.org/pdf/2607.13044},
 }
