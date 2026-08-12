@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blogs by Dr.-Ing. Anubhab Banerjee — Fun with GPU and production-grade agentic inference on Towards Data Science, plus the Medium series Patenting in the era of GenAI.">
-    <meta name="keywords" content="Anubhab Banerjee, blog, Towards Data Science, GPU, LLM inference, agentic AI, Kubernetes, patenting, GenAI, invention reports, Medium">
+    <meta name="description" content="Blogs by Dr.-Ing. Anubhab Banerjee — Fun with GPU, production-grade agentic inference, and perspectives on AI infrastructure on Towards Data Science, plus the Medium series Patenting in the era of GenAI.">
+    <meta name="keywords" content="Anubhab Banerjee, blog, Towards Data Science, GPU, LLM inference, agentic AI, Kubernetes, RAG, latent memory, patenting, GenAI, invention reports, Medium">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Blogs | Dr.-Ing. Anubhab Banerjee</title>
   </head>
@@ -15,7 +15,7 @@
     <div class="main-class">
       <div id="description">
         I am an official <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> contributor, writing on ML systems, efficient inference, and related engineering topics.
-        The first two sections collect selected <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> posts by theme; the last section links the <b>Medium</b> patenting arc.
+        The first three sections collect selected <b><a href="https://towardsdatascience.com/" target="_blank">Towards Data Science</a></b> posts by theme; the last section links the <b>Medium</b> patenting arc.
       </div>
       <hr>
       <h2 id="fun-with-gpu">Fun with GPU</h2>
@@ -34,6 +34,26 @@
         It traces a path from PyBind11-driven queues through aligned chunking into a FlashAttention-friendly memory contract, using <code>cudaHostAlloc</code> pinned pathways so the GPU sees steady work instead of idle gaps waiting on the host. . . . . <i>Read the full post <a href="https://towardsdatascience.com/i-built-a-c-backend-so-my-gpu-would-stop-eating-air/" target="_blank">here</a></i>
       </div>
       <hr>
+      <div class="blog-item">
+        <h3>3 Agents. 3 LLMs. 1 Aging GPU: Engineering Parallel Inference on Bare Metal</h3>
+        <br>
+      </div>
+      <div id="description">
+        A build log for VRAM Conductor: running three different LLMs concurrently on a single 8GB GPU without OOM crashes.
+        It works through NVML-seeded admission control, a layer-streaming engine that double-buffers <code>cudaMemcpyAsync</code> transfers across two CUDA streams, and a stateless KV-swap helper for clean model-switch eviction.
+        The throughline is a hard constraint taken seriously: three agents, three models, one aging card, and a discipline of measuring wall-clock savings instead of assuming pinned memory alone would save the day. . . . . <i>Read the full post <a href="https://towardsdatascience.com/3-agents-3-llms-1-aging-gpu-engineering-parallel-inference-on-bare-metal/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>How To Build Your Own LLM Runtime From Scratch</h3>
+        <br>
+      </div>
+      <div id="description">
+        A from-scratch, heavily-annotated CUDA inference runtime for Qwen2.5-Coder-7B on H100 — every hot path commented for the why, not just the what.
+        It walks through a custom INT4 weight packer, fused GEMV kernels, paged KV, split-KV attention, and CUDA graph decode, contrasting honest numbers against <code>llama.cpp</code> rather than claiming to beat it.
+        The point is not raw speed; it is understanding what fifty thousand lines of GGML are actually doing between a prompt and the HBM bus. . . . . <i>Read the full post <a href="https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/" target="_blank">here</a></i>
+      </div>
+      <hr>
       <h2 id="production-grade-agentic-inference">Production-grade Agentic Inference</h2>
       <hr>
       <div id="description">
@@ -45,7 +65,7 @@
         <br>
       </div>
       <div id="description">
-        A systems-engineering approach to KV cache reuse that proves computing a shared prompt once beats N parallel prefills every time.
+        Part 1 of the series: a systems-engineering approach to KV cache reuse that proves computing a shared prompt once beats N parallel prefills every time.
         It frames multi-agent and DAG-shaped LLM workloads where each branch would otherwise re-read the same long document into KV at full cost, and explains how copy-on-fork style host snapshots with RoPE-aware continuation can move time-to-first-token off the critical path.
         The emphasis is on end-to-end measurables—wall clock, prefix reuse, and branch start latency—grounded in a pinned llama.cpp orchestration surface rather than speculative engine features that are not available to call. . . . . <i>Read the full post <a href="https://towardsdatascience.com/kv-cache-reuse-for-multi-agent-llm-inference-i-built-a-c-orchestrator-so-my-gpu-would-stop-reading-the-same-document-twice/" target="_blank">here</a></i>
       </div>
@@ -55,9 +75,55 @@
         <br>
       </div>
       <div id="description">
-        Stop trusting the pod status. An end-to-end framework for measuring the hidden microarchitectural costs and memory contention of GPU sharing among AI Agents in Kubernetes.
+        Part 2 of the series: stop trusting the pod status. An end-to-end framework for measuring the hidden microarchitectural costs and memory contention of GPU sharing among AI Agents in Kubernetes.
         It pairs a single-node K3s lab setup with synchronized inference-style GEMM work alongside a second GPU-heavy tenant, then reads latency through percentiles and jitter instead of a superficial “job completed” signal.
         The aim is a receipt-grade account of time-sliced GPUs: when co-scheduled agents collide on memory bandwidth and queueing, what happens to tail latency under load, and which measurement choices expose contention that averages hide. . . . . <i>Read the full post <a href="https://towardsdatascience.com/gpu-time-slicing-for-concurrent-llm-agents-on-kubernetes/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>GPU-Resident Top-K for Agentic RAG: I Built a CUDA Kernel So My Retrieval Step Would Stop Bouncing Off the GPU</h3>
+        <br>
+      </div>
+      <div id="description">
+        Part 3 of the series: a CUDA kernel that keeps the entire retrieval hop — similarity scoring, per-block Top-K, and the final merge — resident on the GPU.
+        It targets the default agentic RAG pattern where every tool call ships a query embedding to the CPU, sorts candidates there, and ships results back, treating that PCIe round-trip as the real bottleneck rather than the model itself.
+        Across a 45-configuration sweep on a GTX 1080, the GPU-resident path beats the CPU round-trip baseline by up to 8.6x, while the post stays candid about where a simple V1 selector still loses at large K. . . . . <i>Read the full post <a href="https://towardsdatascience.com/gpu-resident-top-k-for-agentic-rag-i-built-a-cuda-kernel-so-my-retrieval-step-would-stop-bouncing-off-the-gpu/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>Persistent Latent Memory for Multi-Hop LLM Agents: How a 6G Handover Paper Closes the Agent Cold-Start</h3>
+        <br>
+      </div>
+      <div id="description">
+        Part 4 of the series: multi-hop LLM agents currently hand off context as a string, discarding the receiver's KV cache and any partial computation the sender already built up.
+        This post adapts Inductive Latent Context Persistence (ILCP) — originally a peer-reviewed 6G handover protocol — into <code>ilcp-for-agents</code>, compressing a sender's pooled hidden state through a &beta;-VAE, transporting it across the hand-off, and projecting it into receiver-side memory tokens.
+        V1 ships the architecture (PyTorch, Qwen2.5-7B-Instruct, gated MLP projector) with agent-side benchmarks explicitly left as future work, while the underlying 6G protocol's validated numbers are presented and clearly labelled as such. . . . . <i>Read the full post <a href="https://towardsdatascience.com/persistent-latent-memory-for-multi-hop-llm-agents-how-a-6g-handover-paper-closes-the-agent-cold-start/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <h2 id="perspectives-on-ai-infrastructure">Perspectives on AI Infrastructure</h2>
+      <hr>
+      <div id="description">
+        Shorter, opinionated pieces on where AI memory and agent orchestration are headed — less code, more architecture and systems thinking about what today's approaches are actually standing in for.
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>RAG Was Always a Temporary Workaround. What is Next?</h3>
+        <br>
+      </div>
+      <div id="description">
+        An argument that Retrieval-Augmented Generation is a high-overhead translation layer built around a temporary limitation, not the final architecture for AI memory.
+        It traces why vector databases, chunking, and retrieval exist largely because models cannot yet persist their own internal neural state, and what changes once persistent latent-space memory matures.
+        The piece stops short of dismissing RAG outright — vector search keeps its place at the boundary where machines explain themselves to other machines — while arguing that its role as the default conversational memory mechanism is a bridge, not a destination. . . . . <i>Read the full post <a href="https://towardsdatascience.com/rag-was-always-a-temporary-workaround-what-is-next/" target="_blank">here</a></i>
+      </div>
+      <hr>
+      <div class="blog-item">
+        <h3>When the Code Becomes the CEO: Why Your Next Manager Might Be a Decentralized Agentic Loop</h3>
+        <br>
+      </div>
+      <div id="description">
+        A forward-looking piece on what happens when coordination work — the part of management that is really just routing, prioritization, and delegation — gets absorbed by a decentralized agentic loop.
+        It frames the shift not as agents replacing people outright, but as a structural change in where decisions get made once orchestration itself becomes cheap and reliable enough to automate.
+        The argument stays grounded in the same systems thinking as the rest of this line of work: coordination has a real computational cost, and that cost is dropping fast. . . . . <i>Read the full post <a href="https://towardsdatascience.com/when-the-code-becomes-the-ceo-why-your-next-manager-might-be-a-decentralized-agentic-loop/" target="_blank">here</a></i>
       </div>
       <hr>
       <h2 id="patenting-genai-series">Patenting in the era of GenAI</h2>
